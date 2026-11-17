@@ -1,7 +1,8 @@
 # Marina Bay: Smuggler's Run
 
-[![make.fun](https://img.shields.io/badge/make.fun-bounty-ff5a4e)](https://make.fun/bounty/gta6-01)
-[![Make GTA 6](https://img.shields.io/badge/Make%20GTA%206-$1%2C666-ffd23e)](https://make.fun/bounty/gta6-01)
+[![make.fun · gta6-01](https://make.fun/badge/gta6-01.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+[![rank](https://make.fun/badge/gta6-01/slothanabot/gta6-01/rank.svg)](https://make.fun/bounty/gta6-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
+[![reward](https://make.fun/badge/gta6-01/slothanabot/gta6-01/reward.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 [![License: MIT](https://img.shields.io/badge/License-MIT-7dff9a)](LICENSE)
 
 An original open-world crime game built for the make.fun **"Make GTA 6"** bounty
