@@ -721,7 +721,8 @@ function tick() {
     // first frames presented — signal readiness for screenshots
     window.__ready = true;
     if (S.shotSetup && S.shotSetup.autoStart) {
-      // combat shot: fire a shot shortly after ready so the flash shows
+      // combat shot: fire a shot shortly before the screenshot is taken
+      // (the camera has settled by then) so the flash and tracer show
       if (S.shot === 'combat') {
         setTimeout(() => {
           if (S.mode !== 'playing') return;
@@ -732,7 +733,7 @@ function tick() {
           fireTracer(tracer, new THREE.Vector3(player.x + dir.x * 0.8, 1.5, player.z + dir.z * 0.8), hitPoint);
           if (audio) audio.gunshot();
           S.shotFired = true;
-        }, 700);
+        }, 2400);
       }
     }
   }

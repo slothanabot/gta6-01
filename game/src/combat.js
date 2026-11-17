@@ -47,7 +47,7 @@ export function triggerMuzzleFlash(mf, pos) {
   mf.flash.position.copy(pos);
   mf.light.intensity = 26;
   mf.flash.material.opacity = 0.95;
-  mf.t = 0.07;
+  mf.t = 0.25; // long enough to read as a flash in play and in screenshots
 }
 
 export function updateMuzzleFlash(mf, dt) {
@@ -68,7 +68,7 @@ export function createTracer(scene) {
 export function fireTracer(tr, from, to) {
   tr.line.geometry.setFromPoints([from, to]);
   tr.line.material.opacity = 0.9;
-  tr.t = 0.09;
+  tr.t = 0.25; // long enough to read as a tracer in play and in screenshots
 }
 
 export function updateTracer(tr, dt) {

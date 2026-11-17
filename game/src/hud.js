@@ -32,7 +32,8 @@ export function updateHud(state) {
     sb.classList.remove('hidden');
     $('speed-value').textContent = Math.round(Math.abs(state.speed) * 3.6);
   } else sb.classList.add('hidden');
-  $('crosshair').classList.toggle('hidden', state.inCar || state.weapon.name === 'FISTS' && !state.aiming);
+  // crosshair: hidden while driving, and unarmed fists hide it unless attacking
+  $('crosshair').classList.toggle('hidden', state.inCar || (state.weapon.name === 'FISTS' && !state.aiming));
   $('interact').classList.toggle('hidden', !state.interactText);
   if (state.interactText) $('interact-text').textContent = state.interactText;
   $('damage').style.opacity = state.damageFlash > 0 ? Math.min(1, state.damageFlash) : 0;
