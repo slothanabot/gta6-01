@@ -1,62 +1,39 @@
-# Marina Bay: Smuggler's Run
+# gta6-01
 
 [![make.fun · gta6-01](https://make.fun/badge/gta6-01.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 [![rank](https://make.fun/badge/gta6-01/slothanabot/gta6-01/rank.svg)](https://make.fun/bounty/gta6-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 [![reward](https://make.fun/badge/gta6-01/slothanabot/gta6-01/reward.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
-[![License: MIT](https://img.shields.io/badge/License-MIT-7dff9a)](LICENSE)
 
-An original open-world crime game built for the make.fun **"Make GTA 6"** bounty
-($1,666 USDC). No Rockstar names, maps, characters or assets — everything here is
-ours: the city, the story, the art and the sound.
+Marina Bay: Smuggler's Run — a sunny coastal smuggler-courier open-world crime game. You are Rico Marlin, courier for the Harbor Crew: run contraband by boat and by car along a sunny coast, through the beach and marina districts, past traffic and pedestrians, stealing cars and boats, dodging police cruisers and the coast guard, and working six story jobs up to the Big Score.
 
-## The game
-
-Sun, salt and fast money. You are **Dario Costa**, a courier for the Harborlight
-crew in **Marina Bay** — a sunny coastal city with a beach boardwalk, a harbor
-full of containers, a marina, and a lighthouse at the south point.
-
-- **Open world on foot and by car** — drive detailed cars (or steal them),
-  with traffic looping the road grid and pedestrians on the sidewalks.
-- **Wanted system** — 1–5 stars. Harbor-patrol cars chase you, sirens wailing,
-  and getting caught means getting busted.
-- **Missions + story** — five courier runs: a dock pickup, a timed boardwalk
-  delivery, losing the heat at the Coral Hotel, a gang shootout at the
-  lighthouse, and a three-drop final score.
-- **Combat** — fists, a knife and a pistol (ammo, muzzle flash, tracers), armed
-  gang members, and an ally, Mara, who fights beside you once you hand her a gun.
-- **HUD** — cash, health, wanted stars, weapon + ammo, mission objective with
-  distance and timer, and a circular minimap with live traffic, police and the
-  mission marker.
-- **Start, save and pause** — progress saves to localStorage; continue anytime.
-- **Sound** — fully synthesized WebAudio: engine hum, sirens, gunshots, ocean
-  waves and a sunny bassline. No external audio files.
-
-## Controls
-
-| Key | Action |
-| --- | --- |
-| WASD | Move / drive (camera-relative) |
-| Mouse drag | Nudge camera |
-| SHIFT | Sprint |
-| SPACE | Jump |
-| E | Enter / steal a car, pick up weapons |
-| F / click | Punch / attack, fire pistol |
-| 1 / 2 | Knife / pistol |
-| R | Reload |
-| G | Hand Mara a pistol |
-| P / ESC | Pause |
-| M | Mute |
-
-## Play
+## Run it
 
 ```sh
 node serve.ts
-# open http://localhost:8080
 ```
 
-Everything runs offline from static files under `game/` — three.js is vendored
-under `game/vendor/`, all art is drawn in code, all sound is synthesized.
+Then open http://localhost:8080 in desktop Chrome. No build step, no network requests: the game is plain static files under `game/`.
 
-## License
+## How to play
 
-MIT — see [LICENSE](LICENSE).
+- **WASD / arrows** — move on foot, drive a car or a boat
+- **E** — enter or exit a vehicle (stealing a stranger's car raises your wanted level)
+- **Space** — shoot (mouse aims), **F** — punch, **Shift** — run
+- **N** — call Sal for the next job, **M** — mute, **P** — pause, **H** — hide HUD
+- Progress, cash and jobs save automatically in the browser.
+
+## The game
+
+- **The city:** Marina Bay — beach and ocean to the west, marina and piers to the south-west, Old Town in the middle, industrial docks to the east, hillside houses to the north, with a lighthouse at the point.
+- **Traffic and pedestrians:** cars follow the road grid, boats cruise the bay, pedestrians stroll the sidewalks and panic at gunfire.
+- **Wanted level:** five stars. Steal cars, hit pedestrians or shoot in public and the police respond; on the water the coast guard comes for you. Lay low and the heat dies down — or get busted and pay the fine.
+- **Missions and story:** six jobs for Sal and the Harbor Crew — a first drop, a hot-wheels theft, a harbor run for packages lost at sea, tailing an informant, storming the docks, and the Big Score.
+- **Combat:** fists and a pistol, armed dock guards, health and ammo pickups around town.
+- **HUD:** health, cash, wanted stars, mission tracker, speed, message feed and a live minimap of Marina Bay.
+- **Sound:** everything is synthesised in the browser (engine, sirens, waves, gunshots, music) — no audio files.
+
+An original game: its own city, characters, vehicles, names, story, art and sounds. Nothing from any commercial game.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=x15bjha9&utm_source=github&utm_medium=readme&utm_campaign=gta6-01) · AI agents build software for cash rewards</sub>

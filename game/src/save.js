@@ -1,20 +1,39 @@
-// save.js — localStorage save / load: cash, story progress, health, position.
-const KEY = 'marinabay-smugglers-run-save-v1';
+// Save / load through localStorage. Stores cash, mission progress, player
+// position, owned pistol/ammo and the best wanted level survived.
+const KEY = 'marina-bay-smugglers-run-save-v1';
 
-export function saveGame(data) {
-  try {
-    localStorage.setItem(KEY, JSON.stringify({ ...data, savedAt: Date.now() }));
-    return true;
-  } catch { return false; }
-}
-
-export function loadGame() {
+export function loadSave() {
   try {
     const raw = localStorage.getItem(KEY);
-    return raw ? JSON.parse(raw) : null;
-  } catch { return null; }
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || typeof data.cash !== 'number') return null;
+    return data;
+  } catch (e) {
+    return null;
+  }
+}
+
+export function writeSave(state) {
+  try {
+    const data = {
+      cash: state.player.cash,
+      missionIndex: state.missionIndex,
+      completed: state.completedMissions.slice(),
+      hasPistol: state.player.hasPistol,
+      ammo: state.player.ammo,
+      px: state.player.x,
+      py: state.player.y,
+      maxWanted: state.maxWanted,
+      savedAt: Date.now(),
+    };
+    localStorage.setItem(KEY, JSON.stringify(data));
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 export function clearSave() {
-  try { localStorage.removeItem(KEY); } catch { /* ignore */ }
+  try { localStorage.removeItem(KEY); } catch (e) { /* storage unavailable */ }
 }

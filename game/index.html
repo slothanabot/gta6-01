@@ -1,89 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marina Bay: Smuggler's Run — an original open-world crime game</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🌴</text></svg>">
-<link rel="stylesheet" href="styles.css">
-<script type="importmap">
-{ "imports": { "three": "./vendor/three.module.min.js" } }
-</script>
+<title>Marina Bay: Smuggler's Run</title>
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-<div id="app">
-  <canvas id="scene"></canvas>
-
-  <!-- HUD -->
-  <div id="hud" class="hidden">
-    <div id="hud-top-left">
-      <div id="cash">$<span id="cash-value">250</span></div>
-      <div id="health-bar"><div id="health-fill"></div><span id="health-text">100</span></div>
-      <div id="rep-line">REP <span id="rep-value">Rookie Courier</span></div>
-    </div>
-    <div id="hud-top-right">
-      <div id="wanted" aria-label="wanted level"></div>
-      <div id="clock">DAY 1 &middot; 09:41</div>
-    </div>
-    <div id="objective">
-      <div id="objective-title">WELCOME TO MARINA BAY</div>
-      <div id="objective-text">Walk to the glowing marker.</div>
-      <div id="objective-dist"></div>
-    </div>
-    <div id="mission-banner" class="hidden"></div>
-    <div id="toast" class="hidden"></div>
-    <div id="minimap-wrap"><canvas id="minimap" width="220" height="220"></canvas><div id="minimap-label">MARINA BAY</div></div>
-    <div id="weapon-box" class="hidden">
-      <span id="weapon-icon">&#128298;</span>
-      <span id="weapon-name">FISTS</span>
-      <span id="weapon-ammo"></span>
-    </div>
-    <div id="speed-box" class="hidden"><span id="speed-value">0</span><span id="speed-unit"> km/h</span></div>
-    <div id="interact" class="hidden">Press <b>E</b> <span id="interact-text"></span></div>
-    <div id="crosshair" class="hidden">+</div>
-    <div id="hint">WASD move &middot; SHIFT sprint &middot; E enter car &middot; F punch &middot; 1 knife &middot; 2 pistol &middot; M mute</div>
-    <div id="damage"></div>
-    <div id="vignette"></div>
-  </div>
-
-  <!-- Start screen -->
-  <div id="start-screen">
-    <div id="start-inner">
-      <div id="title-block">
-        <div id="title-kicker">AN ORIGINAL OPEN-WORLD CRIME GAME</div>
-        <h1 id="game-title">MARINA BAY</h1>
-        <div id="game-subtitle">Smuggler&rsquo;s Run</div>
-        <p id="title-story">Sun, salt and fast money. You are <b>Dario Costa</b>, a courier for the
-        Harborlight crew. Run packages across Marina Bay, dodge the harbor patrol,
-        and don&rsquo;t let the heat catch you.</p>
-      </div>
-      <div id="start-actions">
-        <button id="btn-start" class="big-btn">▶&nbsp; START GAME</button>
-        <button id="btn-continue" class="big-btn hidden">↻&nbsp; CONTINUE — <span id="continue-label"></span></button>
-        <button id="btn-fullscreen" class="small-btn">⛶&nbsp; FULLSCREEN</button>
-      </div>
-      <div id="start-controls">WASD move &middot; Mouse aim &middot; E drive / steal cars &middot; F fight &middot; 1 knife &middot; 2 pistol &middot; SPACE jump &middot; P pause</div>
-      <div id="loading"><div id="loading-bar"></div><div id="loading-text">Loading Marina Bay…</div></div>
-    </div>
-  </div>
-
-  <!-- Pause menu -->
-  <div id="pause-screen" class="hidden">
-    <h2>PAUSED</h2>
-    <p id="pause-stats"></p>
-    <button id="btn-resume" class="big-btn">RESUME</button>
-    <button id="btn-save" class="small-btn">💾 SAVE GAME</button>
-    <button id="btn-restart" class="small-btn">↺ RESTART STORY</button>
-    <button id="btn-quit-menu" class="small-btn">🏖 MAIN MENU</button>
-  </div>
-
-  <!-- Game over -->
-  <div id="dead-screen" class="hidden">
-    <h2>BUSTED / WASTED</h2>
-    <p id="dead-text"></p>
-    <button id="btn-respawn" class="big-btn">RESPAWN AT THE CLINIC — $50</button>
-  </div>
-</div>
+<canvas id="game" width="1280" height="720" aria-label="Marina Bay: Smuggler's Run — a sunny coastal smuggler-courier open-world crime game"></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<div id="hint">WASD move / drive &middot; E enter or exit a vehicle &middot; Space shoot &middot; F punch &middot; Shift run &middot; M mute &middot; P pause &middot; H hide HUD</div>
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>

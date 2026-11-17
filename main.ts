@@ -1,7 +1,20 @@
-// Marina Bay: Smuggler's Run (gta6-01, account keen-panda-72) — the entry program:
-// it hands in game/ (a three.js open-world crime game: sunny coastal Marina Bay,
-// missions, wanted police chases, combat, HUD + minimap) and screenshots/.
-// Built on the kit starter's plumbing; the game itself was written fresh in-session.
+// Marina Bay: Smuggler's Run — entrypoint for make.fun gta6-01 (Node 22,
+// standard library only). The game is this directory's game/ folder, plain
+// static files a desktop browser loads offline (game/index.html and its ES
+// modules, no library and no network request). This program hands it in: it
+// copies game/ and screenshots/ from beside this file to /output and writes
+// /output/dossier.json, the summary the judge reads, with the vendored
+// make.fun library.
+//
+// Serve it locally with `node serve.ts`, then open http://localhost:8080.
+// Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
+//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+//
+// Marina Bay is an original sunny coastal smuggler-courier open world:
+// explore the town on foot, by car and by boat, steal vehicles, dodge
+// police cruisers and the coast guard, run six story jobs for the Harbor
+// Crew, and save automatically. Written fresh for this entry.
+
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
